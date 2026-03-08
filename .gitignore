@@ -1,0 +1,16 @@
+# Backend secrets
+hungrezy-backend/src/main/resources/application.properties
+
+# Backend build
+hungrezy-backend/target/
+
+# Frontend
+hungrezy-client/node_modules/
+hungrezy-client/dist/
+
+# Mac
+.DS_Store
+
+# IDE
+.idea/
+*.iml

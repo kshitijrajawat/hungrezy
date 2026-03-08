@@ -1,0 +1,41 @@
+# Server
+server.port=8080
+
+# PostgreSQL
+spring.datasource.url=jdbc:postgresql://localhost:5432/hungrezy
+spring.datasource.username=postgres
+spring.datasource.password=YOUR_DB_PASSWORD_HERE
+spring.datasource.driver-class-name=org.postgresql.Driver
+
+# JPA
+spring.jpa.hibernate.ddl-auto=none
+spring.jpa.show-sql=false
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
+
+# JWT
+jwt.secret=YOUR_JWT_SECRET_MIN_32_CHARS_HERE
+jwt.expiration=604800000
+
+# Braintree
+braintree.merchant.id=YOUR_MERCHANT_ID_HERE
+braintree.public.key=YOUR_PUBLIC_KEY_HERE
+braintree.private.key=YOUR_PRIVATE_KEY_HERE
+braintree.environment=SANDBOX
+
+# AWS S3
+aws.access.key=YOUR_AWS_ACCESS_KEY_HERE
+aws.secret.key=YOUR_AWS_SECRET_KEY_HERE
+aws.s3.bucket=YOUR_BUCKET_NAME_HERE
+aws.s3.region=ap-south-1
+
+# File Upload
+spring.servlet.multipart.max-file-size=1MB
+spring.servlet.multipart.max-request-size=1MB
+
+# Supabase/PostgreSQL connection pooling
+spring.datasource.hikari.connection-init-sql=SET SESSION CHARACTERISTICS AS TRANSACTION ISOLATION LEVEL READ COMMITTED
+spring.jpa.properties.hibernate.jdbc.use_get_generated_keys=true
+spring.datasource.hikari.data-source-properties.prepareThreshold=0
+
+# Logging
+logging.level.com.hungrezy=DEBUG
