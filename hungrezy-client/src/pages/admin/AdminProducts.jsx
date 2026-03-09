@@ -57,7 +57,10 @@ export default function AdminProducts() {
           toast.success("Product created!");
       }
       setShowModal(false); load();
-    } catch (e) { toast.error("Failed to save product"); }
+    } catch (e) { 
+  console.log("Error response:", e.response?.data);
+  console.log("Error status:", e.response?.status);
+  toast.error("Failed to save product"); }
     finally { setSaving(false); }
   };
 
