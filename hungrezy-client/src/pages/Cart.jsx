@@ -100,7 +100,7 @@ useEffect(() => {
                 className="card p-4 flex items-center gap-4"
               >
                 <img
-                  src={product.photoUrl}
+                  src={item.photoUrl}
                   alt={item.name}
                   className="w-20 h-20 object-cover rounded-xl bg-muted"
                   onError={(e) => { e.target.src = "https://placehold.co/80x80/1a1a1a/f97316?text=F"; }}
