@@ -6,6 +6,9 @@ const API = axios.create({
 
 export const DIRECT_API = axios.create({
   baseURL: "https://api.kshitijrajawat.in/api/v1",
+  headers: {
+    "Connection": "close"
+  }
 });
 
 // Attach JWT token to every request automatically
