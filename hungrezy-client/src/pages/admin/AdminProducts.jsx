@@ -44,6 +44,11 @@ export default function AdminProducts() {
       Object.entries(form).forEach(([k, v]) => fd.append(k, v));
       if (photo) fd.append("photo", photo);
 
+      // Debug - check FormData contents
+    for (let [key, value] of fd.entries()) {
+      console.log(key, value);
+    }
+
       if (editId) {
           await DIRECT_API.put(`/product/update-product/${editId}`, fd);
           toast.success("Product updated!");
