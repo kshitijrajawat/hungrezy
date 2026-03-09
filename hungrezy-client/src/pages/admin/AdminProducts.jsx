@@ -4,6 +4,7 @@ import { FiPlus, FiEdit2, FiTrash2, FiX } from "react-icons/fi";
 import { toast } from "react-toastify";
 import API from "../../utils/api";
 import Spinner from "../../components/Spinner";
+import API, { DIRECT_API } from "../../utils/api";
 
 const emptyForm = { name: "", description: "", price: "", category: "", quantity: "", shipping: false };
 
@@ -45,10 +46,10 @@ export default function AdminProducts() {
       if (photo) fd.append("photo", photo);
 
       if (editId) {
-        await API.put(`/product/update-product/${editId}`, fd, { headers: { "Content-Type": "multipart/form-data" } });
+        await DIRECT_API.put(`/product/update-product/${editId}`, fd, { headers: { "Content-Type": "multipart/form-data" } });
         toast.success("Product updated!");
       } else {
-        await API.post("/product/create-product", fd, { headers: { "Content-Type": "multipart/form-data" } });
+        await DIRECT_API.post("/product/create-product", fd, { headers: { "Content-Type": "multipart/form-data" } });
         toast.success("Product created!");
       }
       setShowModal(false); load();
