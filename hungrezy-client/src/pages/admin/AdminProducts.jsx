@@ -45,11 +45,11 @@ export default function AdminProducts() {
       if (photo) fd.append("photo", photo);
 
       if (editId) {
-        await DIRECT_API.put(`/product/update-product/${editId}`, fd, { headers: { "Content-Type": "multipart/form-data" } });
-        toast.success("Product updated!");
+          await DIRECT_API.put(`/product/update-product/${editId}`, fd);
+          toast.success("Product updated!");
       } else {
-        await DIRECT_API.post("/product/create-product", fd, { headers: { "Content-Type": "multipart/form-data" } });
-        toast.success("Product created!");
+          await DIRECT_API.post("/product/create-product", fd);
+          toast.success("Product created!");
       }
       setShowModal(false); load();
     } catch (e) { toast.error("Failed to save product"); }
