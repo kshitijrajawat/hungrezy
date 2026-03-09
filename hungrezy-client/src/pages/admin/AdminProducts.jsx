@@ -91,7 +91,7 @@ export default function AdminProducts() {
                   className="border-t border-white/5 hover:bg-white/2 transition-colors"
                 >
                   <td className="px-4 py-3">
-                    <img src={`/api/v1/product/product-photo/${p.id}`} alt={p.name}
+                    <img src={p.photoUrl} alt={p.name}
                       className="w-12 h-12 object-cover rounded-lg bg-muted"
                       onError={(e) => { e.target.src = "https://placehold.co/48x48/1a1a1a/f97316?text=F"; }} />
                   </td>
