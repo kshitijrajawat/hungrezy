@@ -92,7 +92,7 @@ public class ProductController {
             if (price == null) return ResponseEntity.status(500).body(Map.of("error", "Price is Required"));
             if (category == null || category.isBlank()) return ResponseEntity.status(500).body(Map.of("error", "Category is Required"));
             if (quantity == null) return ResponseEntity.status(500).body(Map.of("error", "Quantity is Required"));
-            if (photo != null && photo.getSize() > 1_000_000) return ResponseEntity.status(500).body(Map.of("error", "Photo should be less than 1MB"));
+            if (photo != null && photo.getSize() > 5_000_000) return ResponseEntity.status(500).body(Map.of("error", "Photo should be less than 1MB"));
 
             Category cat = categoryRepository.findById(category).orElseThrow();
             Product product = new Product();
@@ -135,7 +135,7 @@ public class ProductController {
             @RequestParam(required = false) Boolean shipping,
             @RequestParam(required = false) MultipartFile photo) {
         try {
-            if (photo != null && photo.getSize() > 1_000_000) return ResponseEntity.status(500).body(Map.of("error", "Photo should be less than 1MB"));
+            if (photo != null && photo.getSize() > 5_000_000) return ResponseEntity.status(500).body(Map.of("error", "Photo should be less than 1MB"));
 
             Category cat = categoryRepository.findById(category).orElseThrow();
             Product product = productRepository.findById(pid).orElseThrow();
