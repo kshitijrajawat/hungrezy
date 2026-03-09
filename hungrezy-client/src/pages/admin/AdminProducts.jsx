@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { FiPlus, FiEdit2, FiTrash2, FiX } from "react-icons/fi";
 import { toast } from "react-toastify";
-import API from "../../utils/api";
 import Spinner from "../../components/Spinner";
 import API, { DIRECT_API } from "../../utils/api";
 
