@@ -21,11 +21,6 @@ A full-stack food delivery web application with complete e-commerce functionalit
 
 ---
 
-## 📸 Screenshots
-
-> Home Page · Product Listing · Product Detail · Cart · Admin Panel
-
----
 
 ## ✨ Features
 
