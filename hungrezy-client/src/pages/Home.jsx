@@ -9,7 +9,7 @@ import Spinner from "../components/Spinner";
 const features = [
   { icon: FiStar,  label: "Premium Quality",   desc: "Handpicked ingredients" },
   { icon: FiClock, label: "30 Min Delivery",    desc: "Fresh & fast" },
-  { icon: FiTruck, label: "Free Shipping",      desc: "On orders above ₹299" },
+  { icon: FiTruck, label: "Free Delivery",      desc: "On orders above ₹199" },
 ];
 
 export default function Home() {
