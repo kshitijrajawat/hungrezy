@@ -75,7 +75,7 @@ export default function AdminOrders() {
               <div className="flex flex-wrap gap-2">
                 {order.products?.map((p) => (
                   <div key={p.id} className="flex items-center gap-2 bg-muted rounded-xl px-3 py-2">
-                    <img src={`/api/v1/product/product-photo/${p.id}`} alt={p.name}
+                    <img src={p.photoUrl} alt={p.name}
                       className="w-8 h-8 rounded-lg object-cover"
                       onError={(e) => { e.target.src = "https://placehold.co/32x32/0f0f0f/f97316?text=F"; }} />
                     <span className="text-xs text-gray-300">{p.name}</span>
