@@ -53,7 +53,7 @@ export default function Categories() {
                 to={`/product-category/${cat.slug}`}
                 className="card p-6 flex flex-col items-center text-center gap-3 hover:border-brand-500/40 group"
               >
-                <span className="text-5xl">{categoryEmojis[i % categoryEmojis.length]}</span>
+                <span className="text-5xl">{categoryEmojis[cat.name] || "🍽️"}</span>
                 <h3 className="text-white font-semibold group-hover:text-brand-400 transition-colors">
                   {cat.name}
                 </h3>
