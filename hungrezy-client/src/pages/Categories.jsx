@@ -5,7 +5,16 @@ import { FiArrowRight } from "react-icons/fi";
 import API from "../utils/api";
 import Spinner from "../components/Spinner";
 
-const categoryEmojis = ["🍔", "🍕", "🍜", "🥗", "🍰", "🥤", "🍣", "🌮", "🍗", "🥪"];
+const categoryEmojis = {
+  "Pizza": "🍕",
+  "North Indian": "🍛",
+  "Beverages": "🥤",
+  "Burger": "🍔",
+  "Dessert": "🍰",
+  "Pasta": "🍝",
+  "Salad": "🥗",
+  "Sandwich": "🥪"
+};
 
 export default function Categories() {
   const [categories, setCategories] = useState([]);
