@@ -106,7 +106,7 @@ export default function ProductDetail() {
           </div>
 
           {inCart ? (
-            <div className="flex items-center gap-3 bg-muted rounded-xl px-4 py-3">
+            <div className="flex items-center gap-3 bg-muted rounded-xl px-4 py-3 w-fit">
               <button
                 onClick={() =>
                   updateQty(product.id, (inCart.qty || 1) - 1)
