@@ -7,11 +7,11 @@ import Spinner from "../../components/Spinner";
 const STATUSES = ["Not Process", "Processing", "Shipped", "deliverd", "cancel"];
 
 const statusColor = {
-  "Not Process": "text-yellow-400",
+  "Not Processed yet": "text-yellow-400",
   "Processing":  "text-blue-400",
   "Shipped":     "text-purple-400",
-  "deliverd":    "text-green-400",
-  "cancel":      "text-red-400",
+  "delivered":    "text-green-400",
+  "cancelled":      "text-red-400",
 };
 
 export default function AdminOrders() {
