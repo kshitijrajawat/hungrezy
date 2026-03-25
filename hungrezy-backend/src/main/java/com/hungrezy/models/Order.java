@@ -52,8 +52,8 @@ public class Order {
         NOT_PROCESS("Not Process"),
         PROCESSING("Processing"),
         SHIPPED("Shipped"),
-        DELIVERED("deliverd"),
-        CANCEL("cancel");
+        DELIVERED("delivered"),
+        CANCELLED("cancelled");
 
         private final String value;
         OrderStatus(String value) { this.value = value; }
