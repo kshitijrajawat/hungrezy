@@ -18,18 +18,20 @@ public interface ProductRepository extends JpaRepository<Product, String>,
 
     List<Product> findByCategory(Category category);
 
-    List<Product> findByCategory_IdAndIdNot(String categoryId, String productId);
+    List<Product> findByCategoryIdAndIdNot(String categoryId, String productId);
 
-    @Query("SELECT p FROM Product p WHERE " +
-           "LOWER(p.name) LIKE LOWER(CONCAT('%', :keyword, '%')) OR " +
-           "LOWER(p.description) LIKE LOWER(CONCAT('%', :keyword, '%'))")
+    @Query("""SELECT p FROM Product p WHERE 
+           LOWER(p.name) LIKE LOWER(CONCAT('%', :keyword, '%')) OR 
+           LOWER(p.description) LIKE LOWER(CONCAT('%', :keyword, '%'))
+        """)
     List<Product> searchByKeyword(@Param("keyword") String keyword);
 
 
-    @Query("SELECT p FROM Product p LEFT JOIN FETCH p.category WHERE " +
-            "(:categoryIds IS NULL OR p.category.id IN :categoryIds) AND " +
-            "(:minPrice IS NULL OR p.price >= :minPrice) AND " +
-            "(:maxPrice IS NULL OR p.price <= :maxPrice)")
+    @Query(""" SELECT p FROM Product p LEFT JOIN FETCH p.category WHERE 
+            (:categoryIds IS NULL OR p.category.id IN :categoryIds) AND 
+            (:minPrice IS NULL OR p.price >= :minPrice) AND 
+            (:maxPrice IS NULL OR p.price <= :maxPrice)
+            """)
     List<Product> findByFilters(
             @Param("categoryIds") List<String> categoryIds,
             @Param("minPrice") Double minPrice,
