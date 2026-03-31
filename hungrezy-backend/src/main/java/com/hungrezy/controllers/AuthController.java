@@ -44,16 +44,16 @@ public class AuthController {
             Object address = body.get("address");
             String answer = (String) body.get("answer");
 
-            if (name == null || name.isBlank()) return ResponseEntity.ok(Map.of("error", "Name is Required"));
-            if (email == null || email.isBlank()) return ResponseEntity.ok(Map.of("message", "Email is Required"));
-            if (password == null || password.isBlank()) return ResponseEntity.ok(Map.of("message", "Password is Required"));
-            if (phone == null || phone.isBlank()) return ResponseEntity.ok(Map.of("message", "Phone no is Required"));
-            if (address == null) return ResponseEntity.ok(Map.of("message", "Address is Required"));
-            if (answer == null || answer.isBlank()) return ResponseEntity.ok(Map.of("message", "Answer is Required"));
+            if (name == null || name.isBlank()) return ResponseEntity.badRequest().body(Map.of("message", "Name is Required"));
+            if (email == null || email.isBlank()) return ResponseEntity.badRequest().body(Map.of("message", "Email is Required"));
+            if (password == null || password.isBlank()) return ResponseEntity.badRequest().body(Map.of("message", "Password is Required"));
+            if (phone == null || phone.isBlank()) return ResponseEntity.badRequest().body(Map.of("message", "Phone no is Required"));
+            if (address == null || address.toString().isBlank()) return ResponseEntity.badRequest().body(Map.of("message", "Address is Required"));
+            if (answer == null || answer.isBlank()) return ResponseEntity.badRequest().body(Map.of("message", "Answer is Required"));
 
             Optional<User> existingUser = userRepository.findByEmail(email);
             if (existingUser.isPresent()) {
-                return ResponseEntity.ok(Map.of(
+                return ResponseEntity.badRequest().body(Map.of(
                         "success", false,
                         "message", "Already Register please login"
                 ));
