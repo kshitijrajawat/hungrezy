@@ -266,7 +266,7 @@ public class ProductController {
     @GetMapping("/related-product/{pid}/{cid}")
     public ResponseEntity<?> relatedProducts(@PathVariable String pid, @PathVariable String cid) {
         try {
-            List<Product> products = productRepository.findByCategory_IdAndIdNot(cid, pid)
+            List<Product> products = productRepository.findByCategoryIdAndIdNot(cid, pid)
                     .stream().limit(3).toList();
 //            products.forEach(this::stripPhoto);
             return ResponseEntity.ok(Map.of("success", true, "products", products));
